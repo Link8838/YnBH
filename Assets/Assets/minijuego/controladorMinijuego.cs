@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controlador : MonoBehaviour
+public class controladorMinijuego : MonoBehaviour
 {
     Rigidbody2D rb;
     float rotacion;
