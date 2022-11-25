@@ -15,7 +15,7 @@ public class Water : MonoBehaviour{
                 gas.SetActive(true);
                 other.gameObject.GetComponent<playerStats>().setGas();
             }
-            other.gameObject.GetComponent<playerStats>().setGas();
+            other.gameObject.GetComponent<playerStats>().setWater();
             inInventory.SetActive(true);
         }
         gameObject.SetActive(false);

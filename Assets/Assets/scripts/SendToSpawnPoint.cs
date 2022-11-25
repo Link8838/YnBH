@@ -10,9 +10,13 @@ public class SendToSpawnPoint : MonoBehaviour{
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player") {
-            other.gameObject.transform.position = spawnPoint.position;
-            other.gameObject.transform.rotation = spawnPoint.rotation;
+            stsp(other.gameObject);
         }
+    }
+
+    public void stsp(GameObject player) {
+        player.transform.position = spawnPoint.position;
+        player.gameObject.transform.rotation = spawnPoint.rotation;
     }
 
 }

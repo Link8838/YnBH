@@ -38,4 +38,8 @@ public class countDown : MonoBehaviour{
     public void startTimer() {
         timerOn = true;
     }
+
+    public void resetTimer() {
+        timeleft = 30.0f;
+    }
 }

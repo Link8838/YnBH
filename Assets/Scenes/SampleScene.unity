@@ -4498,13 +4498,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigame: {fileID: 1623031010}
   water: {fileID: 1880142816}
+  player: {fileID: 740521827}
   computerScreen: {fileID: 503253889}
+  onScreen: {fileID: 21300000, guid: 70e3a7543a5f58347afa2d9d95e2419b, type: 3}
   offScreen: {fileID: 21300000, guid: c2b2da41235638f49bcb163ebaf79f04, type: 3}
   offScreenWin: {fileID: 21300000, guid: b81dc7509c87f9646aa2601e29aabc1e, type: 3}
   computerLigth: {fileID: 255024544}
   pc: {fileID: 740521828}
   cd: {fileID: 668602090}
-  time: 30
+  sts: {fileID: 2114050338}
+  time: 60
   startGame: 0
 --- !u!65 &503253891
 BoxCollider:

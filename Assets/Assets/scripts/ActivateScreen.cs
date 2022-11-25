@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class ActivateScreen : MonoBehaviour{
 
-    public GameObject minigame, water;
+    public GameObject minigame, water, player;
     public SpriteRenderer computerScreen;
+    public Sprite onScreen;
     public Sprite offScreen;
     public Sprite offScreenWin;
     public Light computerLigth;
     public controlador pc;
     public countDown cd;
+    public SendToSpawnPoint sts;
     Coroutine rutina;
     public float time = 60;
     public bool startGame = false;
@@ -39,6 +41,12 @@ public class ActivateScreen : MonoBehaviour{
     public void offChallenge() {
         corutinaCtrl(2);
         computerScreen.sprite = offScreen;
+        startGame = false;
+        cd.resetTimer();
+        sts.stsp(player);
+        computerLigth.enabled = true;
+        computerLigth.intensity = computerLigth.intensity*2;
+        computerScreen.sprite = onScreen;
     }
 
     public void challengePassed() {
