@@ -15,17 +15,17 @@ public class playerStats : MonoBehaviour{
         return tab;
     }
     public void setGas() {
-        gas = true;
+        gas = !gas;
     }
     public bool getGas() {
         return gas;
     }
 
     public void setWater() {
-        tab = true;
+        water = !water;
     }
 
     public bool getWater() {
-        return tab;
+        return water;
     }
 }

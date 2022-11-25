@@ -8,6 +8,7 @@ public class ActivateScreen : MonoBehaviour{
     public GameObject minigame, water;
     public SpriteRenderer computerScreen;
     public Sprite offScreen;
+    public Sprite offScreenWin;
     public Light computerLigth;
     public controlador pc;
     public countDown cd;
@@ -31,18 +32,19 @@ public class ActivateScreen : MonoBehaviour{
 
     public void DisableScreen() {
         minigame.SetActive(false);
-        computerScreen.sprite = offScreen;
         computerLigth.enabled = false;
         pc.enabled = true;
     }
 
     public void offChallenge() {
         corutinaCtrl(2);
+        computerScreen.sprite = offScreen;
     }
 
     public void challengePassed() {
         corutinaCtrl(2);
         water.SetActive(true);
+        computerScreen.sprite = offScreenWin;
     }
 
     public IEnumerator StartMinigame() {
