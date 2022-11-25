@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class ActivateScreen : MonoBehaviour{
 
-    public GameObject minigame;
+    public GameObject minigame, water;
     public SpriteRenderer computerScreen;
     public Sprite offScreen;
     public Light computerLigth;
     public controlador pc;
+    public countDown cd;
     Coroutine rutina;
     public float time = 60;
     public bool startGame = false;
@@ -17,7 +18,7 @@ public class ActivateScreen : MonoBehaviour{
     private void OnTriggerEnter(Collider other) {
         if(!startGame) {
             startGame = true;
-            corutinaCtrl(time);
+            corutinaCtrl(1);
         }
     }
 
@@ -25,6 +26,7 @@ public class ActivateScreen : MonoBehaviour{
         pc.enabled = false;
         minigame.SetActive(true);
         computerLigth.intensity = computerLigth.intensity / 2;
+        cd.startTimer();
     }
 
     public void DisableScreen() {
@@ -34,17 +36,38 @@ public class ActivateScreen : MonoBehaviour{
         pc.enabled = true;
     }
 
-    public IEnumerator StartMinigame(float time) {
+    public void offChallenge() {
+        corutinaCtrl(2);
+    }
+
+    public void challengePassed() {
+        corutinaCtrl(2);
+        water.SetActive(true);
+    }
+
+    public IEnumerator StartMinigame() {
         EnableScreen();
         yield return new WaitForSecondsRealtime(time);
         DisableScreen();
     }
 
+    public IEnumerator FinishMinigame() {
+        DisableScreen();
+        yield return new WaitForSeconds(0.5f);
+    }
+
     //Controlador de las corrutinas para llamadas limpias.
-    public void corutinaCtrl(float time) {
+    public void corutinaCtrl(int type) {
         if(rutina != null) {
             StopAllCoroutines();
         }
-        rutina = StartCoroutine(StartMinigame(time));
+        switch(type) {
+            case 1:
+                rutina = StartCoroutine(StartMinigame());
+                break;
+            case 2:
+                rutina = StartCoroutine(FinishMinigame());
+                break;
+        }        
     }
 }

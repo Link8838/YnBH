@@ -7,6 +7,7 @@ TagManager:
   - muro
   - objectZone
   - object
+  - waterP
   layers:
   - Default
   - TransparentFX
