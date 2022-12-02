@@ -8,6 +8,7 @@ TagManager:
   - objectZone
   - object
   - waterP
+  - Tile
   layers:
   - Default
   - TransparentFX

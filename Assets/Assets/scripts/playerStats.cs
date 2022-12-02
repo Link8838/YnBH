@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerStats : MonoBehaviour{
 
     public LayerMask objetos;
-    public bool tab, water, egg, gas;
+    public bool tab, water, egg, gas, key;
 
     public void setTab() {
         tab = true;
@@ -27,5 +27,13 @@ public class playerStats : MonoBehaviour{
 
     public bool getWater() {
         return water;
+    }
+
+    public void setKey() {
+        key = !key;
+    }
+
+    public bool getKey() {
+        return key;
     }
 }
