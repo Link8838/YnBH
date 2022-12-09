@@ -9,6 +9,9 @@ TagManager:
   - object
   - waterP
   - Tile
+  - pica
+  - diam
+  - cora
   layers:
   - Default
   - TransparentFX
