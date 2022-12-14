@@ -28,7 +28,6 @@ public class countDown : MonoBehaviour{
     }
 
     public void updateTimer(float currentTime) {
-        aus.Play();
         currentTime += 1;
 
         float minutes = Mathf.FloorToInt(currentTime/60);

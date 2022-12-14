@@ -10,7 +10,7 @@ public class consola : MonoBehaviour{
     public TextMeshProUGUI texto;
     public string tex, aux, caba;
     public string[] frase, fraseC;
-    public int timer, modTimer, cont, numCar;
+    public int counter, modTimer, cont, numCar;
     public Boolean escribir;
     public GameObject campo;
 
@@ -28,7 +28,7 @@ public class consola : MonoBehaviour{
         tex = campo.GetComponent<Text>().text;
 
         if (escribir) {        
-            timer++;
+            counter++;
             escribirEnTerminal(tex);
         }
     }
@@ -46,7 +46,7 @@ public class consola : MonoBehaviour{
         }
         fraseC = frase;
 
-        modTimer = timer % 1;
+        modTimer = counter % 1;
         if (modTimer == 0) {
             if (cont != tex.Length) {
                 if (fraseC[cont] != " ") {
@@ -60,7 +60,7 @@ public class consola : MonoBehaviour{
                 aux += "\n";
                 escribir = false;
                 //cont = 0;
-                //timer = 0;
+                //counter = 0;
                 //texto.text = "";                
             }
         }

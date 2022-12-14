@@ -7,7 +7,6 @@ public class controladorSimb : MonoBehaviour{
     public float move;
     public AudioSource aus;
     public AudioClip bit;
-    
 
     // Update is called once per frame
     void Update(){

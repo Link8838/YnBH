@@ -5,7 +5,7 @@ using UnityEngine;
 public class lastChallengeControler : MonoBehaviour{
 
     public bool pica, cora, diam;
-    public GameObject miniGame, wall, player;
+    public GameObject miniGame, wall, player, door;
     public SendToSpawnPoint ssp;
     public AudioSource aus;
     public AudioClip win;
@@ -30,6 +30,7 @@ public class lastChallengeControler : MonoBehaviour{
     public void challengePassed() {
         aus.PlayOneShot(win);
         wall.SetActive(false);
+        door.SetActive(false);
         miniGame.SetActive(false);
         player.GetComponent<controlador>().enabled = true;
     }
