@@ -9,6 +9,7 @@ public class countDown : MonoBehaviour{
     public float timeleft;
     public bool timerOn = false;
     public ActivateScreen offScreen;
+    public AudioSource aus;
 
     public TMP_Text text;
 
@@ -27,6 +28,7 @@ public class countDown : MonoBehaviour{
     }
 
     public void updateTimer(float currentTime) {
+        aus.Play();
         currentTime += 1;
 
         float minutes = Mathf.FloorToInt(currentTime/60);

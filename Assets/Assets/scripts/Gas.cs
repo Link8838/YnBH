@@ -7,9 +7,11 @@ public class Gas : MonoBehaviour{
     public GameObject inInventory;
     public GameObject waterInvertory;
     public GameObject water;
+    public AudioManager am;
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.tag == "Player") {
+            am.playGrab();
             if(other.gameObject.GetComponent<playerStats>().getWater()) {
                 waterInvertory.SetActive(false);
                 water.SetActive(true);

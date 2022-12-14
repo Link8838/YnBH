@@ -17,6 +17,8 @@ public class ActivateScreen : MonoBehaviour{
     Coroutine rutina;
     public float time = 60;
     public bool startGame = false;
+    public AudioSource aus;
+    public AudioClip clip;
 
     private void OnTriggerEnter(Collider other) {
         if(!startGame) {
@@ -26,6 +28,8 @@ public class ActivateScreen : MonoBehaviour{
     }
 
     public void EnableScreen() {
+        aus.Play();
+        pc.muteSound();
         pc.enabled = false;
         minigame.SetActive(true);
         computerLigth.intensity = computerLigth.intensity / 2;
@@ -53,6 +57,7 @@ public class ActivateScreen : MonoBehaviour{
         corutinaCtrl(2);
         water.SetActive(true);
         computerScreen.sprite = offScreenWin;
+        aus.PlayOneShot(clip);
     }
 
     public IEnumerator StartMinigame() {

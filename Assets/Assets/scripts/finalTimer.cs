@@ -8,6 +8,7 @@ public class finalTimer : MonoBehaviour {
     public float timeleft;
     public bool timerOn = false;
     public lastChallengeControler lcc;
+    public AudioSource aus;
 
     public TMP_Text text;
 
@@ -27,6 +28,7 @@ public class finalTimer : MonoBehaviour {
     }
 
     public void updateTimer(float currentTime) {
+        aus.Play();
         currentTime += 1;
 
         float minutes = Mathf.FloorToInt(currentTime / 60);

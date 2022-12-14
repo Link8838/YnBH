@@ -50,4 +50,8 @@ public class controlador : MonoBehaviour{
             audio.Pause();
         }
     }
+
+    public void muteSound() {
+        audio.Pause();
+    }
 }

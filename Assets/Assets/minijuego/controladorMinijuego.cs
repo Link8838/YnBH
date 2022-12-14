@@ -6,13 +6,16 @@ public class controladorMinijuego : MonoBehaviour{
 
     float rotacion;
     float velocidadRotacion = 10f;
+    public AudioSource aus;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update(){
-        if (Input.GetKeyDown("a")){
+        if(Input.GetKeyDown("a")) {
+            aus.Play();
             rotacion = -45f;
         }else if (Input.GetKeyDown("d")){
+            aus.Play();
             rotacion = 45f;
         }else{
             rotacion = 0;

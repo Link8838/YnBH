@@ -13,12 +13,15 @@ public class activateLastChallenge : MonoBehaviour {
     public SendToSpawnPoint sts;
     public float time = 60;
     public bool startGame = false;
+    public AudioSource aus;
 
     private void OnTriggerEnter(Collider other) {
         EnableScreen();
     }
 
     public void EnableScreen() {
+        aus.Play();
+        pc.muteSound();
         pc.enabled = false;
         minigame.SetActive(true);
         computerLigth.intensity = computerLigth.intensity / 2;        
