@@ -5,6 +5,7 @@ using UnityEngine;
 public class SendToSpawnPoint : MonoBehaviour{
 
     public Transform spawnPoint;
+    public EndGame eg;
     public AudioSource aus;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class SendToSpawnPoint : MonoBehaviour{
 
     public void stsp(GameObject player) {
         aus.Play();
+        eg.addDead();
         player.transform.position = spawnPoint.position;
         player.gameObject.transform.rotation = spawnPoint.rotation;
     }

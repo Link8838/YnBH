@@ -7,6 +7,7 @@ public class lastChallengeControler : MonoBehaviour{
     public bool pica, cora, diam;
     public GameObject miniGame, wall, player, door;
     public SendToSpawnPoint ssp;
+    public finalTimer ft;
     public AudioSource aus;
     public AudioClip win;
 
@@ -36,6 +37,7 @@ public class lastChallengeControler : MonoBehaviour{
     }
 
     public void challegeFaield() {
+        ft.resetTimer();
         ssp.stsp(player);
         miniGame.SetActive(false);
         player.GetComponent<controlador>().enabled = true;

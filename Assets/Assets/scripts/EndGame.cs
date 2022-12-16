@@ -18,7 +18,8 @@ public class EndGame : MonoBehaviour{
     public string text = "S#jeto de pru%bas n-mero: <$_!>\n\nTi|mpo de ejecuci=n: ";
     public string tex, aux, caba;
     public string[] frase, fraseC;
-    public int counter, modTimer, cont, numCar;  
+    public int counter, modTimer, cont, numCar;
+    public int deadCounts = 0;
     private void OnTriggerEnter(Collider other) {
         pc.muteSound();
         pc.enabled = false;
@@ -41,6 +42,7 @@ public class EndGame : MonoBehaviour{
     void preprareText() {
         text = "S#jeto de pru%bas n-mero: <$_!>\n\nTi|mpo de ejecuci=n: ";
         text += time;
+        text += "\n\nIter#cion!s: " + deadCounts.ToString(); 
         buildText();
         Debug.Log(text);
         start = true;
@@ -96,6 +98,10 @@ public class EndGame : MonoBehaviour{
                 aus.Stop();
             }
         }
+    }
+
+    public void addDead() {
+        deadCounts++;
     }
 
 }
